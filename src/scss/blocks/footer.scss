@@ -1,0 +1,44 @@
+.footer {
+  @include adaptive-value('padding-block', 44, 56);
+  background-color: $c_black;
+  color: $c_white;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      display: grid;
+      justify-content: center;
+      row-gap: 48px;
+    }
+  }
+
+  &__column {
+    display: grid;
+    row-gap: 14px;
+
+    @include onTablet {
+      justify-items: center;
+      row-gap: 32px;
+    }
+
+    &--right {
+      justify-items: flex-end;
+
+      @include onTablet {
+        justify-items: center;
+        row-gap: 6px;
+      }
+    }
+
+    & :last-child {
+      align-self: flex-end;
+    }
+  }
+
+  &__copyright {
+    opacity: 0.5;
+  }
+}

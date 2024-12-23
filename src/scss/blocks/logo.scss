@@ -1,0 +1,16 @@
+.logo {
+  display: block;
+  @include adaptive-value('width', 192, 144);
+  @include adaptive-value('height', 32, 24);
+
+  &--small {
+    width: 144px;
+    height: 24px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+  }
+}

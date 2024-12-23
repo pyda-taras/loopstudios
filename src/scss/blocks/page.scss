@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  @extend %main-text;
+
+  &__content {
+    display: grid;
+    @include adaptive-value('row-gap', 160, 96);
+    flex-grow: 1;
+    @include adaptive-value('padding-bottom', 160, 96);
+  }
+
+  &__h1 {
+    @extend %h1;
+  }
+}

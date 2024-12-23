@@ -1,0 +1,46 @@
+@mixin onMobile {
+  @media (max-width: $maxMobileWidth) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: $maxTabletWidth) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle ($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin adaptive-value($property, $maxSize, $minSize) {
+  $difference: $maxSize - $minSize;
+
+  #{$property}: $maxSize + px;
+
+  @media (max-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + px} + #{$difference} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+  }
+}

@@ -1,0 +1,70 @@
+<section class="creations">
+  <div class="container">
+    <div class="creations__content">
+      <h2 class="creations__title">
+        OUR CREATIONS
+      </h2>
+
+      @@include('../html/button.html', {
+        "class": "creations__button",
+      })
+
+      <ul class="creations__card-list">
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--earth",
+            "title": "deep<br>earth"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--arcade",
+            "title": "night<br>arcade"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--soccer",
+            "title": "soccer<br>team vr"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--grid",
+            "title": "the<br>grid"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--road",
+            "title": "from up<br>above vr"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--night-sky",
+            "title": "pocket<br>borealis"
+          })
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--robot",
+            "title": "the<br>curiosity"
+          })
+        </li>
+
+        <li>
+          @@include('../html/creation-card.html', {
+            "modificator": "creation-card--circular",
+            "title": "make it<br>fisheye"
+          })
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

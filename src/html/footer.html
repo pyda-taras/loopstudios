@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="footer__column">
+        @@include('./logo.html', {
+          modificator: 'logo--small',
+        })
+
+        @@include('./nav.html', {
+          navClass: '',
+          listModificator: 'nav__list--column',
+          linkModificator: '',
+        })
+      </div>
+
+      <div class="footer__column footer__column--right">
+        @@include('./socials.html')
+
+        <p class="footer__copyright">
+          © 2021 Loopstudios. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

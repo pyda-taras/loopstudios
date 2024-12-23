@@ -1,0 +1,52 @@
+.about {
+  &__content {
+    position: relative;
+    @include adaptive-value('padding-bottom', 0, 300);
+
+    @include onTablet {
+      display: grid;
+      row-gap: 48px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 730px;
+    aspect-ratio: 730 / 500;
+    object-position: left;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  &__article {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    display: grid;
+    @include adaptive-value('row-gap', 25, 16);
+    max-width: 541px;
+    @include adaptive-value('padding-top', 96, 24);
+    @include adaptive-value('padding-left', 96, 24);
+    background-color: white;
+
+    @include onTablet {
+      position: relative;
+    }
+
+    @include onMobile {
+      padding-block: 0;
+      padding-inline: 24px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    @include onMobile {
+      // text-align: center;
+    }
+  }
+}

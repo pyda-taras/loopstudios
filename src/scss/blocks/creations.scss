@@ -1,0 +1,47 @@
+.creations {
+  &__content {
+    display: grid;
+    grid-template-areas:
+      "title button"
+      "list list"
+    ;
+    @include adaptive-value('row-gap', 80, 41);
+
+    @include onTablet {
+      grid-template-areas:
+        "title"
+        "list"
+        "button"
+      ;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    @extend %h2;
+
+    @include onTablet {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    justify-self: flex-end;
+
+    @include onTablet {
+      justify-self: center;
+    }
+  }
+
+  &__card-list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    @include adaptive-value('gap', 30, 24);
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

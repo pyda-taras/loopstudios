@@ -1,0 +1,50 @@
+.burger {
+  display: none;
+
+  @include onTablet {
+    display: grid;
+    width: 24px;
+    height: 16px;
+    align-content: center;
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $c_white;
+    transition-duration: $amin-time;
+
+    &--invisible {
+      width: 0;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $c_white;
+    transition-duration: $amin-time;
+  }
+
+  &::before {
+    transform: translateY(-5px);
+  }
+
+  &::after {
+    transform: translateY(5px);
+  }
+
+  &--active {
+    &::before {
+      transform: translateY(100%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-100%) rotate(-45deg);
+    }
+  }
+}

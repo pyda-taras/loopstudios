@@ -1,0 +1,14 @@
+.button {
+  display: block;
+  width: 157px;
+  height: 40px;
+  border: 1px solid $c_black;
+  background-color: $c_white;
+  @extend %button-text;
+  transition-duration: $amin-time;
+
+  &:hover {
+    background-color: $c_black;
+    color: $c_white;
+  }
+}

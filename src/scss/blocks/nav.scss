@@ -1,0 +1,54 @@
+.nav {
+  width: max-content;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    @include adaptive-value('column-gap', 32, 16);
+
+    &--menu {
+      grid-auto-flow: row;
+      row-gap: 24px;
+    }
+
+    &--column {
+      @include onMobile {
+        grid-auto-flow: row;
+        row-gap: 16px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $c_white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: 0;
+      max-width: 24px;
+      height: 2px;
+      background-color: $c_white;
+      transition-duration: $amin-time;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--menu {
+      @extend %menu-text;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
