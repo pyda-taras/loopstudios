@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  @extend %main-text;
+  transition-property: background-color;
+  transition-duration: $amin-time;
+
+  &--black {
+    background-color: $c_black;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value('height', $header-height-desktop, $header-height-mobile);
+  }
+
+  &__nav {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

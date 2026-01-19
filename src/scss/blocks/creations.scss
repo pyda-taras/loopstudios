@@ -1,0 +1,45 @@
+.creations {
+  &__content {
+    display: grid;
+    grid-template-areas:
+    "title button"
+    "list list";
+
+    @include onMobile {
+      grid-template-areas:
+      "title"
+      "list"
+      "button";
+    }
+  }
+
+  &__title{
+    grid-area: title;
+    @include adaptive-value('margin-bottom', 80, 48);
+    @extend %h2;
+
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    justify-self: flex-end;
+
+    @include onMobile {
+      justify-self: center;
+    }
+  }
+
+  &__list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(218.5px, 1fr));
+    @include adaptive-value('gap', 30, 24);
+
+    @include onMobile {
+      margin-bottom: 34px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.footer {
+  @include adaptive-value('padding-block', 44, 56);
+  background-color: $c_black;
+  color: $c_white;
+
+  &__content {
+    display: grid;
+    grid-template-areas: 
+      "logo socials"
+      "nav text";
+    row-gap: 26px;
+
+    @include onTablet {
+      grid-template-areas:
+      "logo socials"
+      "nav nav"
+      "text text";
+    }
+
+    @include onMobile {
+      grid-template-areas:
+      "logo"
+      "nav"
+      "socials"
+      "text";
+      row-gap: 0;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+
+    @include onMobile {
+      justify-self: center;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__socials {
+    grid-area: socials;
+    justify-self: end;
+
+    @include onMobile {
+      justify-self: center;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+
+    @include onTablet {
+      justify-self: center;
+    }
+
+    @include onMobile {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    justify-self: end;
+    opacity: 0.5;
+
+    @include onTablet {
+      justify-self: center;
+    }
+  }
+}

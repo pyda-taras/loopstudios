@@ -1,0 +1,12 @@
+.menu {
+  width: 100vw;
+  height: 100vh;
+  min-height: 450px;
+  background-color: $c_black;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

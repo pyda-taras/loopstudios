@@ -1,0 +1,47 @@
+$sections-mobile-mb: 96;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $c_white;
+  @extend %main-text;
+  color: $c_black;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+    transform: translateX(100%);
+    transition-property: transform;
+    transition-duration: $amin-time;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__section {
+    @include adaptive-value('margin-bottom', 184, $sections-mobile-mb);
+
+    &--hero {
+      @include adaptive-value('margin-bottom', 160, $sections-mobile-mb);
+    }
+  }
+}

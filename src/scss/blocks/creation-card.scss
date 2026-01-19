@@ -1,0 +1,91 @@
+.creation-card {
+  aspect-ratio: 256 / 400;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include onMobile {
+    aspect-ratio: 327 / 120;
+  }
+
+  &--earth {
+    background-image: url(/img/desktop/image-deep-earth.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-deep-earth.jpg);
+    }
+  }
+
+  &--arcade {
+    background-image: url(/img/desktop/image-night-arcade.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-night-arcade.jpg);
+    }
+  }
+
+  &--soccer {
+    background-image: url(/img/desktop/image-soccer-team.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-soccer-team.jpg);
+    }
+  }
+
+  &--grid {
+    background-image: url(/img/desktop/image-grid.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-grid.jpg);
+    }
+  }
+
+  &--from-up {
+    background-image: url(/img/desktop/image-from-above.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-from-above.jpg);
+    }
+  }
+
+  &--borealis {
+    background-image: url(/img/desktop/image-pocket-borealis.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-pocket-borealis.jpg);
+    }
+  }
+
+  &--curiosity {
+    background-image: url(/img/desktop/image-curiosity.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-curiosity.jpg);
+    }
+  }
+
+  &--fisheye {
+    background-image: url(/img/desktop/image-fisheye.jpg);
+
+    @include onMobile {
+      background-image: url(/img/mobile/image-fisheye.jpg);
+    }
+  }
+
+  &__link {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    @include adaptive-value('padding-inline', 40, 20);
+    @include adaptive-value('padding-block', 32, 20);
+    @extend %h3;
+    color: $c_white;
+    transition-property: background-color, color;
+    transition-duration: $amin-time;
+
+    &:hover {
+      background-color: #ffffffbf;
+      color: $c_black;
+    }
+  }
+}

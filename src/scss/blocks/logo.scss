@@ -1,0 +1,17 @@
+$width-small: 144;
+$height-small: 24;
+
+.logo {
+  display: block;
+  @include adaptive-value('width', 192, $width-small);
+  @include adaptive-value('height', 32, $height-small);
+  background-image: url(../../img/logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--small {
+    width: $width-small + px;
+    height: $height-small + px;
+  }
+}

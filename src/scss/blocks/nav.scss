@@ -1,0 +1,61 @@
+.nav {
+  width: max-content;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 33px;
+
+    @include onMobile {
+      grid-auto-flow: row;
+      row-gap: 16px;
+    }
+
+    &--vertical {
+      grid-auto-flow: row;
+      row-gap: 24px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: $c_white;
+      transition-property: transform;
+      transition-duration: $amin-time;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    @extend %nav-link-text;
+    color: $c_white;
+
+    @include onMobile {
+      text-align: center;
+    }
+
+    &--menu {
+      @extend %menu-link-text;
+
+      @include onMobile {
+        text-align: left;
+      }
+    }
+  }
+}

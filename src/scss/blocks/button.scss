@@ -1,0 +1,22 @@
+.button {
+  width: 157px;
+  height: 40px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $c_black;
+    @extend %button-text;
+    color: $c_black;
+    transition-property: background-color, color;
+    transition-duration: $amin-time;
+
+    &:hover {
+      background-color: $c_black;
+      color: $c_white;
+    }
+  }
+}
